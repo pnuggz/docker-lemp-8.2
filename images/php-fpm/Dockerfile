@@ -1,10 +1,11 @@
-FROM php:7.2-fpm-stretch
+FROM devilbox/php-fpm-8.2
 
 RUN apt-get update && apt-get install -y libmcrypt-dev git\
-    mysql-client libmagickwand-dev --no-install-recommends \
+    default-mysql-client libmagickwand-dev --no-install-recommends \
     && pecl install imagick \
     && docker-php-ext-enable imagick \
-    && docker-php-ext-install mbstring mysqli pdo_mysql gd zip \
+    && apt-get -y install libzip-dev \
+    && docker-php-ext-install mysqli pdo_mysql gd zip \
     && apt-get install unzip
 
 # Install Composer
