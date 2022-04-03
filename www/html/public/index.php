@@ -5,6 +5,10 @@ require __DIR__ . "/../routes/index.php";
 
 use App\Helper\Router;
 use App\Helper\View;
+use Dotenv\Dotenv;
+
+$dotenv = Dotenv::createImmutable(__DIR__ . '/../..');
+$dotenv->safeLoad();
 
 $router = Router::getInstance();
 

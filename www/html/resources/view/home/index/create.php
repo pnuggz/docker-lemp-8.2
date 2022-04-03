@@ -3,4 +3,4 @@
     <h1>Home Page</h1>
 </html>
 
-<?= $data['foo'] ?>
+<?= $data['user']->email ?>
